@@ -94,16 +94,49 @@ flutter run
 
 ### 构建发布版本
 
+使用 `scripts/` 目录下的构建脚本：
+
+| 平台 | 脚本 | 输出 |
+|------|------|------|
+| **Android** | `./scripts/build_android.sh` | APK + AAB |
+| **iOS** | `./scripts/build_ios.sh` | IPA（仅 macOS） |
+| **macOS** | `./scripts/build_all.sh` | App bundle（仅 macOS） |
+| **Linux** | `./scripts/build_linux.sh` | 可执行文件 |
+| **Windows** | `./scripts/build_windows.bat` | EXE |
+| **全部平台** | `./scripts/build_all.sh` | 所有平台 |
+
+或直接使用 Flutter 命令：
+
 ```bash
 # Android APK
 flutter build apk --release
 
-# Android App Bundle
+# Android App Bundle (用于 Google Play)
 flutter build appbundle --release
 
-# iOS
+# iOS（仅 macOS）
 flutter build ios --release
+
+# macOS（仅 macOS）
+flutter build macos --release
+
+# Linux
+flutter build linux --release
+
+# Windows
+flutter build windows --release
 ```
+
+### 📦 构建产物位置
+
+| 平台 | 文件位置 |
+|------|----------|
+| Android APK | `build/app/outputs/flutter-apk/app-release.apk` |
+| Android AAB | `build/app/outputs/bundle/release/app-release.aab` |
+| iOS | `build/ios/iphoneos/Runner.ipa` |
+| macOS | `build/macos/Build/Products/Release/ClashDash.app` |
+| Linux | `build/linux/release/bundle/clashdash` |
+| Windows | `build/windows/runner/Release/ClashDash.exe` |
 
 ---
 

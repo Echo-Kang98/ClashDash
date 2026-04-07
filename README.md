@@ -96,16 +96,49 @@ flutter run
 
 ### Build for Production
 
+Use the build scripts in `scripts/` folder:
+
+| Platform | Script | Output |
+|----------|--------|--------|
+| **Android** | `./scripts/build_android.sh` | APK + AAB |
+| **iOS** | `./scripts/build_ios.sh` | IPA (macOS only) |
+| **macOS** | `./scripts/build_all.sh` | App bundle (macOS only) |
+| **Linux** | `./scripts/build_linux.sh` | Executable |
+| **Windows** | `./scripts/build_windows.bat` | EXE |
+| **All** | `./scripts/build_all.sh` | All platforms |
+
+Or use Flutter commands directly:
+
 ```bash
 # Android APK
 flutter build apk --release
 
-# Android App Bundle
+# Android App Bundle (for Google Play)
 flutter build appbundle --release
 
-# iOS
+# iOS (macOS only)
 flutter build ios --release
+
+# macOS (macOS only)
+flutter build macos --release
+
+# Linux
+flutter build linux --release
+
+# Windows
+flutter build windows --release
 ```
+
+### 📦 Build Outputs
+
+| Platform | File Location |
+|----------|---------------|
+| Android APK | `build/app/outputs/flutter-apk/app-release.apk` |
+| Android AAB | `build/app/outputs/bundle/release/app-release.aab` |
+| iOS | `build/ios/iphoneos/Runner.ipa` |
+| macOS | `build/macos/Build/Products/Release/ClashDash.app` |
+| Linux | `build/linux/release/bundle/clashdash` |
+| Windows | `build/windows/runner/Release/ClashDash.exe` |
 
 ---
 
